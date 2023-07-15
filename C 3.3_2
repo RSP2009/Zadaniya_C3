@@ -1,0 +1,13 @@
+let obj1 = {
+name: 'Сергей',
+alter: 49,
+city: "Samara",
+prof: "Ingener"
+};
+
+function checkPropInObj (str, obj1) {
+  console.log(str in obj1);
+};
+
+checkPropInObj ('city', obj1); // true
+checkPropInObj ('qqq', obj1);  // false
