@@ -1,0 +1,16 @@
+let obj = {
+name: 'Сергей',
+alter: 49,
+city: "Samara",
+prof: "Ingener"
+};
+
+function printObject (obj) {
+  for (let prop in obj) {
+    if (obj.hasOwnProperty(prop)) {
+      console.log(`${prop} - ${obj[prop]}`);
+    }
+  }
+}
+
+printObject(obj);
