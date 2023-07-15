@@ -1,0 +1,40 @@
+function ElectroPribor(name, power) {
+    this.name = name;
+    this.power = power;
+    this.isPlugged = false;
+}
+ElectroPribor.prototype.plugIn = function() {
+    console.log(`${this.name} is plugged`);
+    this.isPlugged = true;
+};
+ElectroPribor.prototype.unplug = function() {
+    console.log(`${this.name} is unplugged`);
+    this.isPlugged = false;
+};
+function Lamp(name, brand, power, bulbType) {
+    this.name = name;
+    this.brand = brand;
+    this.power = power;
+    this.bulbType = bulbType;
+    this.isPlugged = true;
+}
+Lamp.prototype = new ElectroPribor();
+
+function Computer(name, brand, power, type, functionality) {
+    this.name = name;
+    this.brand = brand;
+    this.power = power;
+    this.type = type;
+    this.functionality = functionality;
+    this.isPlugged = false;
+}
+Computer.prototype = new ElectroPribor();
+
+const lamp = new Lamp("Table_lamp", "Mayak", 2, "SvetDiod");
+const homePC = new Computer("Table_PC", "Intell", 3, "stationar", "for home");
+
+lamp.unplug();
+homePC.plugIn();
+
+console.log(homePC)
+console.log(lamp)
