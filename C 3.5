@@ -1,0 +1,48 @@
+class ElectroPribor {
+  constructor(name, power){
+    this.name = name;
+    this.power = power;
+    this.isPlugged = false;
+};
+
+plugIn() {
+    console.log(`${this.name} is plugged`);
+    this.isPlugged = true;
+};
+
+unplug() {
+    console.log(`${this.name} is unplugged`);
+    this.isPlugged = false;
+  }
+};
+
+class Lamp extends ElectroPribor {
+  constructor (name, brand, power, bulbType) {
+    super(name, power);
+    this.brand = brand;
+    this.bulbType = bulbType;
+    this.isPlugged = true;
+  }
+};
+
+class Computer extends ElectroPribor {
+   constructor(name, brand, power, type, functionality){    
+    super(name, power);
+    this.brand = brand;
+    this.power = power;
+    this.type = type;
+    this.functionality = functionality;
+    this.isPlugged = false;
+  }
+};
+
+const lamp = new Lamp("Table_lamp", "Mayak", 2, "SvetDiod");
+const homePC = new Computer("Table_PC", "Intell", 3, "stationar", "for home");
+
+lamp.unplug();
+homePC.plugIn();
+
+console.log(homePC);
+console.log(lamp);
+
+
